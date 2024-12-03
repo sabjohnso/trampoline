@@ -33,4 +33,4 @@ jobs:
       run: poetry run pytest
 
     - name: Run Test Coverage
-      run: powetry run pytest --cov=trampoline --cov-report html
+      run: poetry run pytest --cov=trampoline --cov-report html
