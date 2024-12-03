@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "trampoline"
+version = "0.1.0"
+description = "A trampoline to simulate proper tail calls"
+authors = ["Samuel B. Johnson <sabjohnso@yahoo.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.8.1"
+pylint = "^3.3.2"
+pytest = "^8.3.4"
+
+[tool.ruff]
+line-length = 80
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
