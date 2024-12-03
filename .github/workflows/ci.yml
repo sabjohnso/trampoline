@@ -22,7 +22,8 @@ jobs:
       run: sudo apt-get update
 
     - name: Install Python
-      run: sudo apt-get install ${{matrix.python}} python3-poetry
+      run: sudo apt-get install ${{matrix.python}} pipx
+      run: pipx install poetry
 
     - name: Install Trampoline
       run: poetry install
