@@ -1,0 +1,35 @@
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+      branches: ["main"]
+
+jobs:
+  test:
+    name: ${{matrix.python}} on ${{matrix.os}}
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        python: [python3.11]
+        os: [ubuntu-latest]
+      fail-fast: true
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Update APT
+      shell: bash
+      run: sudo apt-get update
+
+    - name: Install Python
+      run: sudo apt-get install ${{matrix.python}} python3-poetry
+      run: pipx install poetry
+
+    - name: Install Trampoline
+      run: poetry install
+
+    - name: Run Tests
+      run: pytest
+
+    - name: Run Test Coverage
+      run: pytest --cov=trampoline --cov-report html
