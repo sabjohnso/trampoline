@@ -34,3 +34,9 @@ jobs:
 
     - name: Run Test Coverage
       run: poetry run pytest --cov=trampoline --cov-report html
+
+    - name: Upload Test Coverage
+      uses: actions/upload-artifact@v4
+      with:
+        name: code-coverage-report
+        path: coverage
