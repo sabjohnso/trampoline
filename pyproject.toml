@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "trampoline"
+name = "trampy"
 version = "0.1.0"
 description = "A trampoline to simulate proper tail calls"
 authors = ["Samuel B. Johnson <sabjohnso@yahoo.com>"]
@@ -15,6 +15,7 @@ ruff = "^0.8.1"
 pylint = "^3.3.2"
 pytest = "^8.3.4"
 pytest-cov = "^6.0.0"
+black = "^25.1.0"
 
 [tool.ruff]
 line-length = 80

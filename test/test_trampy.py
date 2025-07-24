@@ -1,6 +1,6 @@
 from pytest import fail, raises
 
-from trampoline import tramp, tail, pull, tail_call
+from trampy import tramp, tail, pull, tail_call
 
 NFAIL = 100000
 
